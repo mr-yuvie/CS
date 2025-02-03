@@ -1,0 +1,117 @@
+EASY MYSQL
+
+note- the plan below is based on ideal conditions i.e. there will be no errors expected. Obviously the real program will be in try and except blocks with proper exception handling.
+
+host:
+user:
+password:
+
+<DATABASE MENU>
+do you want to create a new database:
+	name of the database:
+		do u want to use it:			
+			#if yes then exit to the main menu, if no then loop the database menu.	
+
+use existing databses:
+	lists all database
+	choose database:					
+		#if user chooses this then after entering the name, exit to the main menu.
+	exit to the prev menu:
+	
+**here you connect the python with mysql.**
+
+<MAIN MENU>
+do u want to create table:
+	enter name of table:
+		enter column name:
+		data type:
+		length of data type:				
+			#won't show up in certain data types like date.
+		is this the primary key:			
+			#if yes then don't show again in other columns.
+		another column:					
+			#if yes then just loop in this sub menu, if no then exit to the prev menu.
+	
+	inset value:
+		enter value(columns in loop):			
+			#and so on make sure primary key isn't repeated again and is not a NULL value, when all columns are filled,exit back to the prev menu.
+		exit to the prev menu:
+
+	display values:
+		enter table name:
+		exit to the prev menu:
+
+	exit to the main menu:
+
+view lists of existing tables:
+	lists table
+	do u want to insert value:
+		enter table name:
+			insert value:	(roll back to insertion above)
+			exit to the prev menu:
+		exit to the prev menu:
+
+	do u want to display values:
+		enter table name:
+			display values:
+			exit to the prev menu:
+		exit to the prev menu:
+
+	exit to the main menu:
+
+display values:
+	#asks user for the specifications,the trickiest part because of all the combos
+	exit to the main menu:
+
+delete table:
+	lists all tables
+	choose:
+		#automatically exits to the prev menu after deletion.
+	exit to the main menu:
+
+modify table:
+	lists all tables
+	choose table:
+		choose what to modify:
+			add column:
+				column name:
+					data type:
+					length of data type:
+					exit to the prev menu:
+				exit to the prev menu:
+			delete column:
+				column name:
+					#automatically exits to the previous menu afer deletion.
+				exit to the prev menu:
+			modify length of data type:
+				enter column name:
+					enter new length:
+					exit to the prev menu:
+				exit to the prev menu:
+			exit to the prev menu:
+
+		exit to the prev menu:
+	
+	exit to the main menu:
+
+update table:
+	lists all tables
+	choose table:
+		choose what to update:
+			choose column:
+				#<insert conditions>
+				exit to the prev menu:
+
+			exit to the prev menu:
+
+		exit to the prev menu:
+
+	exit to the main menu:
+
+delete database:
+	lists all database
+	choose:
+		#automatically exits to the prev menu.
+	exit to the main menu:
+
+exit the program:

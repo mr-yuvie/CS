@@ -1,0 +1,7 @@
+Hello world
+242.56
+I am learning vim, finally and now i am at the end of the line!!!!
+
+hjkl - moving
+iIaA - insert to left, insert at the beginning of the line, insert to right, insert at the end of the line
+xr - deleting a character, Replacing a character

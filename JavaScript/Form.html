@@ -1,0 +1,40 @@
+<!-- // Form // Name // Passwd // Confirm passwd // Email -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="main">
+			<div>
+				<form onsubmit="return on_submit()">
+					<h1>Registration form</h1>
+					<fieldset>
+						<legend>User Personal Information</legend>
+						<label>Enter your full name</label><br />
+						<input type="text" id="name" /><span id="err_1"></span
+						><br />
+						<label>Enter your password</label><br />
+						<input type="password" id="password" /><span
+							id="err_2"
+						></span
+						><br />
+						<label>Confirm your password</label><br />
+						<input type="password" id="c_password" /><span
+							id="err_3"
+						></span
+						><br />
+						<label>Enter your email</label><br />
+						<input type="email" id="email" /><span id="err_4"></span
+						><br />
+						<input type="submit" />
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<script src="Form.js"></script>
+	</body>
+</html>
