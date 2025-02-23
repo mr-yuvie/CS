@@ -200,5 +200,3 @@ int main() {
     prime_numbers_in_range();
     return 0;
 }
-
-// bivarhoijoisdeolreoisdvj
