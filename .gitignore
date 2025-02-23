@@ -1,3 +1,18 @@
-#Ignoring
+#Ignoring file extension
 *.exe
+
+#Ignoring directories
 /.vscode
+
+#Ignoring specific files
+Vim.txt
+makingganes.pdf
+
+#Ignoring School Files
+/School Codes/Mysql file
+/School Codes/Program file
+/School Codes/Project file
+/School Project/Music Files
+/School Project/Test Music File Complex.py
+/School Project/Test Music File Easy.py
+/School Project/Test Tables.py
