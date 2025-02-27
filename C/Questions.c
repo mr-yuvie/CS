@@ -180,6 +180,30 @@ void prime_numbers_in_range() {
     }
 }
 
+int sum_n_numbers_recursion(int n) {
+    if (n == 1) {
+        return 1;
+    }
+    int sum = n + sum_n_numbers_recursion(n - 1);
+    return sum;
+}
+
+int fibonacci_sequence() {
+    int n;
+    printf("Enter number: ");
+    scanf("%d", &n);
+    int a = 0, b = 1;
+    int c;
+    printf("%d\n", a);
+    printf("%d\n", b);
+    for (int i = 0; i < n; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+        printf("%d\n", c);
+    }
+}
+
 int main() {
     // sum_two_nums();
     // area_square();
@@ -197,6 +221,8 @@ int main() {
     // print_odd();
     // factorial_of_n();
     // prime_or_not();
-    prime_numbers_in_range();
+    // prime_numbers_in_range();
+    // printf("Sum is: %d", sum_n_numbers_recursion(3));
+    // fibonacci_sequence();
     return 0;
 }

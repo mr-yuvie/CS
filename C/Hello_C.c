@@ -1,5 +1,5 @@
-#include <math.h>
 #include <stdio.h>  // Preprocessor director
+#include <math.h>
 
 int Hello_C() {
     printf("Hello\n");
@@ -101,11 +101,23 @@ void Loop_Control() {
     } while (x <= 10);
 }
 
+void Recursion(int count){
+    if(count ==0){
+        return;
+    }
+    printf("Hello World\n");
+    Recursion(count - 1);
+}
+
+// Pointers: A variable that stores the memory address of another variable
+
+
 int main() {
     // Hello_C();
     // type_declaration();
     // logical_operators();
     // conditional_operators_1();
     // conditional_operators_2();
-    Loop_Control();
+    // Loop_Control();
+    // Recursion(4);
 }
