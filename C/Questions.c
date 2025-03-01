@@ -188,7 +188,7 @@ int sum_n_numbers_recursion(int n) {
     return sum;
 }
 
-int fibonacci_sequence() {
+void fibonacci_sequence() {
     int n;
     printf("Enter number: ");
     scanf("%d", &n);
@@ -201,6 +201,75 @@ int fibonacci_sequence() {
         a = b;
         b = c;
         printf("%d\n", c);
+    }
+}
+
+void avg_3_nums_array() {
+    int marks[3];
+    printf("Enter marks of Physics: ");
+    scanf("%d", &marks[0]);
+    printf("Enter marks of Chemistry: ");
+    scanf("%d", &marks[1]);
+    printf("Enter marks of Maths: ");
+    scanf("%d", &marks[2]);
+    printf("Percentage is: %d%%", (marks[0] + marks[1] + marks[2]) / 3);
+}
+
+void count_odd() {
+    int len;
+    printf("Enter length of Array: ");
+    scanf("%d", &len);
+    int arr[len];
+    for (int i = 0; i < len; i++) {
+        printf("Enter num: ");
+        scanf("%d", &arr[i]);
+    }
+    int counter = 0;
+    for (int i = 0; i < len; i++) {
+        if (arr[i] % 2 == 1) {
+            counter++;
+        }
+    }
+    printf("Total Odd numbers: %d", counter);
+}
+
+void Reverse_Array() {
+    int len;
+    printf("Enter length of Array: ");
+    scanf("%d", &len);
+    int arr[len];
+    for (int i = 0; i < len; i++) {
+        printf("Enter num: ");
+        scanf("%d", &arr[i]);
+    }
+    for (int i = 0; i < len / 2; i++) {
+        int a = arr[i];
+        int b = arr[len - i - 1];
+        arr[i] = b;
+        arr[len - i - 1] = a;
+    }
+    for (int i = 0; i < len; i++) {
+        printf("%d\n", arr[i]);
+    }
+}
+
+void table_n_array() {
+    int n;
+    printf("Enter total tables: ");
+    scanf("%d", &n);
+    int arr[n][10];
+    for (int i = 0; i < n; i++) {
+        printf("Enter number: ");
+        scanf("%d", &arr[i][0]);
+        for (int j = 2; j < 11; j++) {
+            arr[i][j - 1] = arr[i][0] * j;
+        }
+    }
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d x %d = %d\t", j + 1, i + 1, arr[j][i]);
+        }
+        printf("\n");
     }
 }
 
@@ -224,5 +293,9 @@ int main() {
     // prime_numbers_in_range();
     // printf("Sum is: %d", sum_n_numbers_recursion(3));
     // fibonacci_sequence();
+    // avg_3_nums_array();
+    // count_odd();
+    // Reverse_Array();
+    table_n_array();
     return 0;
 }

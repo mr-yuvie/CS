@@ -1,5 +1,5 @@
-#include <stdio.h>  // Preprocessor director
 #include <math.h>
+#include <stdio.h>  // Preprocessor director
 
 int Hello_C() {
     printf("Hello\n");
@@ -9,9 +9,9 @@ int Hello_C() {
     int age = 22;
     age = 24;
     float pi = 3.14;
-    printf("age is %d\n", age);          // %d: int
-    printf("pi is %f\n", pi);            // %f: float
-    printf("hashtag is %c\n", hashtag);  // %c: char
+    printf("age is %d\n", age);          // %d: int: 4 bytes
+    printf("pi is %f\n", pi);            // %f: float: 4 bytes
+    printf("hashtag is %c\n", hashtag);  // %c: char: 1 byte
     // for input: scanf
     printf("Enter age: ");
     scanf("%d", &age);
@@ -39,8 +39,6 @@ int type_declaration() {
     printf("%d", (int)1.9999);  // Foreful tyoe casting
     return 0;
 }
-
-// printf("%d%d", a, b, c, d, x, y, z, j, k);
 
 // Control Instructions => Sequence Control, Decision Control, Loop Control,
 // Case Control Logical Operators => &&, ||, ! Operator Precedence => !, Bodmas,
@@ -101,16 +99,48 @@ void Loop_Control() {
     } while (x <= 10);
 }
 
-void Recursion(int count){
-    if(count ==0){
+void Recursion(int count) {
+    if (count == 0) {
         return;
     }
     printf("Hello World\n");
     Recursion(count - 1);
 }
 
-// Pointers: A variable that stores the memory address of another variable
+// Pointer: A variable that stores the memory address of another variable
+// *: Value at Address operator, &: Address of operator
+// Pointer to Pointer: A variable that stores the memory address of another pointer // int **pptr;
 
+// Pointers can be incremented(ptr++) and decremented(ptr--)
+// ptr1 - ptr2 is also valid and will return difference in unit of the data stored(booth pointers should have same data type)
+
+void Pointers() {
+    int age = 21;
+    int *ptr = &age;
+    int _age = *ptr;
+    printf("%u\n", ptr);
+    ptr++;  // It will move to the next item
+    printf("%u\n", ptr);
+    printf("%p", ptr);  // %p: pointer address // same as 'print("%p", &age);'
+}
+
+// Arrays: Collection of similar data types stored at contiguous memory locations
+void Arrays() {
+    int nums[8] = {1, 2, 3, 4, 5, 6, 7, 8};
+    // int *ptr = &arr[0]; is same as int *ptr = arr; because array is also a pointer
+    int *ptr = nums;
+    // Traversing an Array
+    for (int i = 0; i < 8; i++) {
+        printf("%d\n", *ptr);
+        ptr++;
+        // printf("%d\n", nums[i]); is also valid
+    }
+}
+
+void Multidimensional_Arrays() {
+    int marks[2][3] = {{84, 85, 86}, {94, 95, 96}};
+    printf("%d", marks[0][1]);  // 85
+}
 
 int main() {
     // Hello_C();
@@ -120,4 +150,7 @@ int main() {
     // conditional_operators_2();
     // Loop_Control();
     // Recursion(4);
+    // Pointers();
+    // Arrays();
+    Multidimensional_Arrays();
 }
