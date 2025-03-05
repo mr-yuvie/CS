@@ -351,6 +351,34 @@ void lowercase_to_uppercase() {
     }
 }
 
+void structure_address() {
+    typedef struct address {
+        int house_num;
+        int block;
+        char city[30];
+        char state[30];
+    } add;
+    int total_people;
+    printf("Enter total people: ");
+    scanf("%d", &total_people);
+    add adds[total_people];
+    for (int i = 0; i < total_people; i++) {
+        printf("Enter info of person %d: \n", i + 1);
+        scanf("%d", &adds[i].house_num);
+        scanf("%d", &adds[i].block);
+        scanf("%s", &adds[i].city);
+        scanf("%s", &adds[i].state);
+    }
+    for (int i = 0; i < total_people; i++) {
+        printf("Info of person %d: ", i + 1);
+        printf("%d\t", adds[i].house_num);
+        printf("%d\t", adds[i].block);
+        printf("%s\t", adds[i].city);
+        printf("%s\t", adds[i].state);
+        printf("\n");
+    }
+}
+
 int main() {
     // sum_two_nums();
     // area_square();
@@ -381,5 +409,6 @@ int main() {
     // string_slicing();
     // vowels();
     // lowercase_to_uppercase();
+    structure_address();
     return 0;
 }

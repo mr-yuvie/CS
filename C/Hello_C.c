@@ -184,6 +184,29 @@ void String_Functions() {
     printf("%d", strcmp(name, name2));  // It compares strings, 0: string equal, +ve: first > second, -ve: first < second [ASCII]
 }
 
+void Structures() {           // Helps in declaring less variables and cleaner data management
+    typedef struct student {  // typedef creates an alias for a datatype
+        char name[100];
+        int roll_num;
+        float cgpa;
+    } stu;
+    struct student s1;
+    strcpy(s1.name, "Yuv Jindal");
+    s1.roll_num = 1234;
+    s1.cgpa = 9.6;
+    printf("%s\n", s1.name);
+    printf("%d\n", s1.roll_num);
+    printf("%f\n", s1.cgpa);
+    struct student *ptr1 = &s1;
+    printf("%s\n", (*ptr1).name);  // Can also be written as printf("%s\n", ptr1->name);
+    printf("%d\n", (*ptr1).roll_num);
+    printf("%f\n", (*ptr1).cgpa);
+    stu s2 = {"Idk", 1223, 8.7};
+    printf("%s\n", s2.name);
+    printf("%d\n", s2.roll_num);
+    printf("%f\n", s2.cgpa);
+}
+
 int main() {
     // Hello_C();
     // type_declaration();
@@ -198,4 +221,5 @@ int main() {
     // Strings();
     // Multiword_Strings();
     // String_Functions();
+    Structures();
 }
