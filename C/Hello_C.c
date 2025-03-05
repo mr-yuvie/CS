@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdio.h>  // Preprocessor director
+#include <string.h>
 
 int Hello_C() {
     printf("Hello\n");
@@ -142,6 +143,47 @@ void Multidimensional_Arrays() {
     printf("%d", marks[0][1]);  // 85
 }
 
+void Strings() {
+    // \0: null character to terminate a string.
+    char first_name[] = {'Y', 'U', 'V', '\0'};
+    char last_name[] = "JINDAL";
+    for (int i = 0; first_name[i] != '\0'; i++) {
+        printf("%c", first_name[i]);
+    }
+    printf(" ");
+    for (int j = 0; last_name[j] != '\0'; j++) {
+        printf("%c", last_name[j]);
+    }
+    printf("\n");
+    char name[20];
+    printf("Enter name: ");
+    scanf("%s", name);   // %s: For String, scanf cannot input multi word string
+    printf("%s", name);  // no need to add & because it is already a pointer array
+}
+
+void Multiword_Strings() {
+    char name[20];  // Cannot be reintialized
+    // gets(name2); // Unsafe due to no detection
+    fgets(name, 20, stdin);  // It adds \n at the end of the string
+    puts(name);
+    char *str = "Hello World";  // Can be reintialized
+    puts(str);
+    str = "Bye";
+    puts(str);
+}
+
+void String_Functions() {
+    char name[20] = "Yuv";
+    int length = strlen(name);  // It returns the length of the string and excludes \0 by default
+    printf("length is: %d\n", length);
+    char name2[20] = "Jindal";
+    strcat(name, name2);  // It concatenates strings (str1, str2) and will overwrite str1, str1 should have enough capacity
+    puts(name);
+    strcpy(name2, name);  // It copies old string to new string(new string, old string)
+    puts(name2);
+    printf("%d", strcmp(name, name2));  // It compares strings, 0: string equal, +ve: first > second, -ve: first < second [ASCII]
+}
+
 int main() {
     // Hello_C();
     // type_declaration();
@@ -152,5 +194,8 @@ int main() {
     // Recursion(4);
     // Pointers();
     // Arrays();
-    Multidimensional_Arrays();
+    // Multidimensional_Arrays();
+    // Strings();
+    // Multiword_Strings();
+    // String_Functions();
 }

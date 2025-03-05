@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdio.h>
+#include <string.h>
 
 int sum_two_nums() {
     int num_a, num_b;
@@ -273,6 +274,83 @@ void table_n_array() {
     }
 }
 
+void largest_num_array() {
+    int arr[] = {10, 20, 60, 45, 789, 47};
+    int temp = 0;
+    for (int i = 0; i < 6; i++) {
+        if (temp < arr[i]) {
+            temp = arr[i];
+        }
+    }
+    printf("%d", temp);
+}
+
+void string_length() {
+    char name[20];
+    printf("Enter name: ");
+    fgets(name, 20, stdin);
+    int length = 0;
+    for (int i = 0; name[i] != '\0'; i++) {
+        length++;
+    }
+    printf("length: %d", length - 1);  // Because \0 is also included in the count
+}
+
+void string_input_using_characters() {
+    char str[100];
+    char ch;
+    int i = 0;
+    printf("Enter String: ");
+    while (ch != '\n') {
+        scanf("%c", &ch);
+        str[i] = ch;
+        i++;
+    }
+    str[i] = '\0';
+    puts(str);
+}
+
+void string_slicing() {
+    char str[100];
+    printf("Enter String: ");
+    fgets(str, 100, stdin);
+    int n;
+    int m;
+    printf("Enter lower index: ");
+    scanf("%d", &n);
+    printf("Enter upper index: ");
+    scanf("%d", &m);
+    for (n; n < m + 1; n++) {
+        printf("%c", str[n]);
+    }
+}
+
+void vowels() {
+    char str[100];
+    printf("Enter String: ");
+    fgets(str, 100, stdin);
+    int count = 0;
+    for (int i = 0; i < strlen(str); i++) {
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') {
+            count++;
+        }
+    }
+    printf("Total Vowels: %d", count);
+}
+
+void lowercase_to_uppercase() {
+    char str[100];
+    printf("Enter String: ");
+    fgets(str, 100, stdin);
+    for (int i = 0; i < strlen(str); i++) {
+        if (str[i] > 96 && str[i] < 123) {
+            printf("%c", str[i] - 32);
+        } else {
+            printf("%c", str[i]);
+        }
+    }
+}
+
 int main() {
     // sum_two_nums();
     // area_square();
@@ -296,6 +374,12 @@ int main() {
     // avg_3_nums_array();
     // count_odd();
     // Reverse_Array();
-    table_n_array();
+    // table_n_array();
+    // largest_num_array();
+    // string_length();
+    // string_input_using_characters();
+    // string_slicing();
+    // vowels();
+    // lowercase_to_uppercase();
     return 0;
 }
