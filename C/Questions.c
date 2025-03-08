@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 int sum_two_nums() {
@@ -379,6 +380,42 @@ void structure_address() {
     }
 }
 
+void Write_Read_File() {
+    FILE *fptr;
+    char choice;
+    char str[1000];
+    fptr = fopen("New.txt", "a+");
+    printf("Enter choice(W/R): ");
+    scanf("%c", &choice);
+    getchar();  // Consumes the newline character
+    if (choice == 'R') {
+        while (fgets(str, 1000, fptr) != NULL) {
+            printf("%s", str);
+        }
+    } else if (choice == 'W') {
+        printf("Enter text: ");
+        fgets(str, 1000, stdin);
+        fprintf(fptr, "%s", str);
+    } else {
+        printf("Wrong Input");
+    }
+    fclose(fptr);
+}
+
+void Write_Odd_Nums() {
+    FILE *fptr;
+    int num;
+    fptr = fopen("Odd_Nums.txt", "w");
+    printf("Enter max number: ");
+    scanf("%d", &num);
+    for (int i = 0; i < num; i++) {
+        if (i % 2 != 0) {
+            fprintf(fptr, "%d\n", i);
+        }
+    }
+    fclose(fptr);
+}
+
 int main() {
     // sum_two_nums();
     // area_square();
@@ -410,5 +447,7 @@ int main() {
     // vowels();
     // lowercase_to_uppercase();
     // structure_address();
+    // Write_Read_File();
+    // Write_Odd_Nums();
     return 0;
 }

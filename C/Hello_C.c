@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdio.h>  // Preprocessor director
+#include <stdlib.h>
 #include <string.h>
 
 int Hello_C() {
@@ -207,6 +208,45 @@ void Structures() {           // Helps in declaring less variables and cleaner d
     printf("%f\n", s2.cgpa);
 }
 
+void FileIO() {
+    FILE *fptr;
+    fptr = fopen("Text.txt", "r");  // modes: w, w+, wb, r, r+, rb, a; b stands for binary files
+    if (fptr == NULL) {
+        printf("File doesn't exist");
+    } else {
+        char ch;
+        fscanf(fptr, "%c", &ch);  // To read from a file
+        printf("%c", ch);
+        fscanf(fptr, "%c", &ch);
+        printf("%c", ch);
+        ch = fgetc(fptr);  // To read from a file but only used for characters
+        printf("%c", ch);
+        ch = fgetc(fptr);
+        printf("%c", ch);
+        ch = fgetc(fptr);
+        printf("%c", ch);
+    }
+    fclose(fptr);
+
+    fptr = fopen("Text.txt", "w");
+    fprintf(fptr, "%s\n", "Hi");  // To write into a file
+    fputc('A', fptr);             // To write into a file but only used for characters
+    fclose(fptr);
+}
+
+// Dynamic Memory Allocation: It is a way to allocate memory to a data structure during the runtime
+void DMA() {
+    int *ptr;
+    // Memory Allocation: Takes number of bytes to be allocated & returns a pointer of type void
+    ptr = (int *)malloc(5 * sizeof(int));  // It would retun 20 bytes, If insufficient memory then NULL
+    // Continuous Allocation: It allocates memory in continuous manner & returns a pointer of type void & initializes all bytes with 0
+    ptr = (int *)calloc(5, sizeof(int));
+    // Free: We use it to free memory that is allocated using malloc & calloc
+    free(ptr);
+    // Reallocation: Increase or Decrease memory using the same pointer & size
+    ptr = realloc(ptr, 10);
+}
+
 int main() {
     // Hello_C();
     // type_declaration();
@@ -222,4 +262,5 @@ int main() {
     // Multiword_Strings();
     // String_Functions();
     // Structures();
+    // FileIO();
 }
