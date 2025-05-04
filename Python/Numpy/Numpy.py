@@ -3,10 +3,9 @@ from numpy import random
 
 # import statistics as st
 
-# a = np.array([[-3, -8], [7, -5]])
-# b = np.array([[4, 5], [9, 10]])
 
-# e = np.array([[1.278, 2.345], [3.954, 4.784]])
+e = np.array([[1.278, 2.345], [3.954, 4.784]])
+print(np.trunc(e))
 # f = [4, 9, 16]
 
 # mathematical functions:
@@ -15,23 +14,29 @@ from numpy import random
 
 # Arithemetic:
 # # Addition
-# print(np.add(a,2))
+a = np.array([[-3, -8], [7, -5]])
+b = np.array([[4, 5], [9, 10]])
+# print(np.add(a,b))
 
 # # Subtraction
 # print(np.subtract(a,b))
 
 # # Multiplication
-# print(np.multiply(a,1.0))
+# print(np.multiply(a,2))
 
 # Division
+# print(np.divmod(a, 2))
 # np.divide --> division
 # np.mod ---> Remainder
 # np.divmod ---> Qoutient,Remainder
 
 # # Exponentinal --> **
 # power--> np.power(a,b)
+# print(np.power(a,b))
 # sqrt --> np.sqrt(a)
 # cbrt --> np.cbrt(a)
+
+# print(np.absolute(a))
 
 # print(np.sqrt(f))
 
@@ -167,8 +172,10 @@ from numpy import random
 #         count_num+=1
 
 # # Matrix of Any other number ((dimension),number)
-# e = np.full((2, 3), 79)
-# print(e)
+# d= np.array([[34,5,6,7],[6,7,8,3]])
+# e = np.full_like(d,5)
+
+# print(np.sort(d)[::-1])
 
 # f = np.identity(5)
 # print(f)

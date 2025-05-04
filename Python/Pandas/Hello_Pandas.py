@@ -46,6 +46,10 @@ import numpy as np
 # olympics_result = pd.read_excel("Pandas\Data\olympics-data.xlsx", sheet_name="results")  # Reads the default sheet 1
 # print(olympics_result)
 
+# FEATHER:
+# results = pd.read_feather(r"Data\data\results.feather")
+# print(results)
+
 # PARQUET:
 # result = pd.read_parquet(r'Pandas\Data\results.parquet')
 # print(result)
@@ -109,6 +113,8 @@ import numpy as np
 # print(bios.loc[(bios["height_cm"] > 215) & (bios["born_country"]=="USA")])
 # print(bios.loc[bios['name'].str.contains("Himanshu")])
 # print(bios.loc[bios['name'].str.contains("Himanshu",case=False)])
+# print(bios.loc[bios['name'].str.startswith("Riya")])
+# print(bios.loc[bios['name'].str.endswith("Williams")])
 
 # print(bios.loc[bios['born_country'].isin(["USA","IND","GBR"])])
 # print(bios.loc[(bios['born_country'].isin(["USA","IND","GBR"]))& (bios['name'].str.startswith("Jack"))])
