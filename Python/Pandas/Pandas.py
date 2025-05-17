@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 # df_1 = pd.DataFrame([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12]])
 # print(df_1)
@@ -174,11 +175,12 @@ import pandas as pd
 # print(bios_new)
 
 # Aggregate functions
-
+# bios = pd.read_csv(r"Y:\CS\Python\Pandas\Data\bios.csv")
 # Counting
+# print(bios['born_country'].value_counts())
 # print(bios[bios["born_country"] == "IND"]["born_city"].value_counts())
 
-# coffee = pd.read_csv("Y:\CS\Pandas\Data\coffee.csv")
+# coffee = pd.read_csv("Y:\CS\Python\Pandas\Data\coffee.csv")
 
 # print(coffee.head())
 # print(coffee.groupby(["Coffee Type"])["Units Sold"].sum())
@@ -190,25 +192,31 @@ import pandas as pd
 # print(coffee.groupby(['Coffee Type']).agg({'Units Sold':'sum'}))
 # print(coffee.groupby(['Day']).agg({'Units Sold':'sum'})) #{'Column name':'Agg function'}
 # print(coffee.groupby(['Coffee Type','Day']).agg({'Units Sold':'sum'}))
+# print(coffee.groupby(["Coffee Type"]).agg({"Units Sold": "sum", "Price": "mean"}).reset_index())
+# print(coffee.groupby(["Coffee Type","Day"]).agg({"Units Sold": "sum", "Price": "mean"}))
 
 # coffee_pivot = coffee.pivot(columns="Coffee Type",index="Day",values="Units Sold")
-# print(coffee_pivot.sum())
+# print(coffee)
+# print(coffee_pivot)
+# print(coffee_pivot.sum(axis=1))
 
 
-# bios= pd.read_csv(r"Y:\CS\Pandas\Data\bios.csv")
+# bios= pd.read_csv(r"Y:\CS\Python\Pandas\Data\bios.csv")
 # print(bios)
 # print(bios.info())
 # bios['born_date'] = pd.to_datetime(bios['born_date'])
 # print(bios.info())
 # print(bios)
-# print(bios.groupby(bios['born_date'].dt.year)['name'].count().reset_index())
+# print(bios.groupby(bios['born_date'].dt.year).count())
+# print(bios.groupby(bios['born_date'].dt.year)['name'].count().reset_index().sort_values('name',ascending=False))
 # print(bios.groupby(bios['born_date'].dt.year)['born_city'].value_counts().reset_index())
 
-# Handling NUll Values
+# Handling Null Values
 # import numpy as np
-# coffee = pd.read_csv("Y:\CS\Pandas\Data\coffee.csv")
-# print(coffee)
+# coffee = pd.read_csv("Y:\CS\Python\Pandas\Data\coffee.csv")
 # coffee.loc[[2,3],'Units Sold'] = np.nan
+# coffee.loc[[7,9],'Day'] = np.nan
+# print(coffee)
 # print(coffee.info())
 # print(coffee.fillna(1000))
 # coffee.fillna(1000,inplace=True)
@@ -220,26 +228,25 @@ import pandas as pd
 # coffee['Units Sold'] = coffee['Units Sold'].interpolate() #Fills using a pattern
 # print(coffee)
 
-# yyyy-mm-dd
-
 # print(coffee.dropna())
-# coffee.dropna()
+# coffee.dropna(subset=['Units Sold'],inplace=True)
 # print(coffee)
-
-# print(coffee.notna())
-# print(coffee[coffee["Units Sold"].notna()])
 
 # print(coffee.isna())
 # print(coffee[coffee['Units Sold'].isna()])
 
-# coffee = pd.read_csv("Y:\CS\Pandas\Data\coffee.csv")
+# print(coffee.notna())
+# print(coffee[coffee["Units Sold"].notna()])
+
+# coffee = pd.read_csv("Y:\CS\Python\Pandas\Data\coffee.csv")
 
 # import numpy as np
 # coffee["Price"] = np.where(coffee["Coffee Type"] == "Espresso", 3.99, 5.99)
 # coffee['Revenue'] = coffee["Units Sold"] * coffee["Price"]
-# coffee['Cum Revenue'] = coffee["Revenue"].cumsum()
 # print(coffee)
 # coffee["Yesterday_Revenue"] = coffee["Revenue"].shift(2)
+# print(coffee)
+# coffee['Cum Revenue'] = coffee["Revenue"].cumsum()
 # print(coffee)
 # coffee["Percent"] = (coffee["Revenue"] - coffee["Yesterday_Revenue"])/100
 # print(coffee)

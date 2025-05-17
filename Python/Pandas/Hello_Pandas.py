@@ -256,11 +256,11 @@ import numpy as np
 
 # Aggregating Data
 # coffee["Price"] = np.where(coffee["Coffee Type"] == "Espresso", 3.99, 5.99)
-# print(coffee.groupby(["Day"]).agg({"Units Sold": "sum", "Price": "mean"}).reset_index()) # To add an additional index column
+# print(coffee.groupby(['Day']).agg({'Units Sold':'sum'}))                                 # {'Column name':'Agg function'}
 # print(coffee.groupby(["Coffee Type"]).agg({"Units Sold": "sum", "Price": "mean"}))
-# print(coffee.groupby(["Coffee Type","Day"]).agg({"Units Sold": "sum", "Price": "mean"}))
+# print(coffee.groupby(["Day"]).agg({"Units Sold": "sum", "Price": "mean"}).reset_index()) # To add an additional index column
 # print(coffee.groupby(["Coffee Type","Day"]).agg({"Units Sold": "sum"}))
-
+# print(coffee.groupby(["Coffee Type","Day"]).agg({"Units Sold": "sum", "Price": "mean"}))
 
 # # FIFTH CLASS
 
@@ -273,8 +273,8 @@ import numpy as np
 
 # Counting by year, Diff from value_counts(), value_counts displays the values(only works on 1 column) while count(multiple columns) gives out a number
 # bios = pd.read_csv(r"Pandas\Data\bios.csv")
-# bios['born_date'] = pd.to_datetime(bios['born_date'])                               # Changing datatype of the same column
 # print(bios.info())
+# bios['born_date'] = pd.to_datetime(bios['born_date'])                               # Changing datatype of the same column
 # print(bios.groupby(bios['born_date'].dt.year).count())                              # Displays count of every column
 # print(bios.groupby(bios['born_date'].dt.year)['name'].count().reset_index())        # Adds a index column at the beginning and only shows the name column
 # print(bios.groupby(bios['born_date'].dt.year)['name'].value_count().reset_index())  # Shows value count of name column
@@ -308,10 +308,12 @@ import numpy as np
 # print(coffee)
 
 # To see the nan rows
+# print(coffee.isna())
 # print(coffee['Units Sold'].isna())
 # print(coffee[coffee["Units Sold"].isna()])
 
 # opposite of it is notna
+# print(coffee.notna())
 # print(coffee[coffee["Units Sold"].notna()])
 
 
