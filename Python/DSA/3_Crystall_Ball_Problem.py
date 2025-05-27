@@ -14,9 +14,8 @@ def Crystal_Ball_Problem(arr):
     for i in range(0, len(arr), jump_amount):
         if arr[i]:
             break
-    i -= jump_amount
 
-    for j in range(i, i + jump_amount):
+    for j in range(i - jump_amount, i):
         if arr[j]:
             print("The index where it breaks first is:", j)
             break

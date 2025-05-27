@@ -1,5 +1,6 @@
 # Time Complexity is O(N^2)
-
+# Swap positions if the next number is smaller than the previous one [x < x + 1]
+# Last element is always sorted so reduce the loop by 1 every single iteration
 
 def Bubble_Sort(arr):
     for i in range(len(arr)):

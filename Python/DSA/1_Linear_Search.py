@@ -1,4 +1,6 @@
 # Time Complexity is O(N)
+
+
 def Linear_Search(arr):
     value = int(input("Enter number to find:"))
     for i in range(len(arr)):
