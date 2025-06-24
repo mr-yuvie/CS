@@ -34,7 +34,7 @@ import numpy as np
 
 # CSV:
 
-# coffee = pd.read_csv("Pandas\Data\coffee.csv")
+# coffee = pd.read_csv("Y:\CS\Python\Pandas\Data\coffee.csv")
 # print(coffee)
 # print(coffee.sample(5)) #Get five random values
 
@@ -57,7 +57,7 @@ import numpy as np
 
 # # SECOND CLASS
 
-# coffee = pd.read_csv("Pandas\Data\coffee.csv")
+# coffee = pd.read_csv("Y:\CS\Python\Pandas\Data\coffee.csv")
 
 # loc & iloc
 # loc filters data by rows and columns names:
@@ -102,7 +102,7 @@ import numpy as np
 
 # Filtering Data:
 
-# bios = pd.read_csv(r"Pandas\Data\bios.csv")
+# bios = pd.read_csv(r"Y:\CS\Python\Pandas\Data\bios.csv")
 # print(bios)
 # print(bios.info())
 # print(bios.loc[bios["height_cm"] > 215])
@@ -121,7 +121,7 @@ import numpy as np
 
 # # THIRD CLASS
 
-# bios = pd.read_csv(r"Pandas\Data\bios.csv")
+# bios = pd.read_csv(r"Y:\CS\Python\Pandas\Data\bios.csv")
 
 # But this is repeatitive so for only one condition we can also use:
 
@@ -132,7 +132,7 @@ import numpy as np
 
 # Adding/Removing/Renaming in DataFrame:
 
-# coffee = pd.read_csv("Pandas\Data\coffee.csv")
+# coffee = pd.read_csv("Y:\CS\Python\Pandas\Data\coffee.csv")
 
 # To add something:
 # coffee["Price"] = 4.99                      # Adds a column but this column have fixed value for all rows
@@ -183,7 +183,7 @@ import numpy as np
 
 
 # Creating a column of only first names
-# bios = pd.read_csv(r"Pandas\Data\bios.csv")
+# bios = pd.read_csv(r"Y:\CS\Python\Pandas\Data\bios.csv")
 # bios["First_Name"] = bios["name"].str.split(" ").str[0]
 # print(bios)
 
@@ -200,12 +200,12 @@ import numpy as np
 
 
 # To save a file:
-# bios.to_csv(r"Pandas\Data\bios_new.csv", index=False)
+# bios.to_csv(r"Y:\CS\Python\Pandas\Data\bios_new.csv")
 
 
 # # FOURTH CLASS
 
-# bios = pd.read_csv(r"Pandas\Data\bios.csv")
+# bios = pd.read_csv(r"Y:\CS\Python\Pandas\Data\bios.csv")
 
 # Adding a custom column:
 
@@ -222,7 +222,7 @@ import numpy as np
 
 # To create other dataframes based on certain conditions:
 
-# bios = pd.read_csv(r"Pandas\Data\bios.csv")
+# bios = pd.read_csv(r"Y:\CS\Python\Pandas\Data\bios.csv")
 # usa = bios.loc[bios["born_country"] == "USA"].copy() # Ask them why we used copy?
 # gbr = bios.loc[bios["born_country"] == "GBR"].copy()
 # print(usa)
@@ -236,7 +236,7 @@ import numpy as np
 
 # Merging data:
 
-# nocs = pd.read_csv(r'Y:\CS\Pandas\Data\noc_regions.csv')
+# nocs = pd.read_csv(r'Y:\CS\Python\Pandas\Data\noc_regions.csv')
 # print(nocs)
 # Merging column with born country matched with NOC to get the full region name
 # bios_new = pd.merge(bios, nocs, left_on='born_country', right_on='NOC')
@@ -250,7 +250,7 @@ import numpy as np
 # print(bios[bios['born_country']=='IND']['born_city'].value_counts())
 
 # Group By
-# coffee = pd.read_csv("Pandas\Data\coffee.csv")
+# coffee = pd.read_csv(r"Y:\CS\Python\Pandas\Data\coffee.csv")
 # print(coffee.groupby(['Coffee Type'])['Units Sold'].sum())
 # print(coffee.groupby(["Coffee Type"])["Units Sold"].mean())
 

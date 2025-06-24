@@ -2,28 +2,19 @@
 # Time Complexity is O(log(N))
 
 
-def Binary_Search(L):
-    value = int(input("Enter number to find:"))
-    steps = 0
+def Binary_Search(L, target):
     MIN = 0
     MAX = len(L) - 1
-    while MIN < MAX:
+    while MIN <= MAX:
         mid = (MIN + MAX) // 2
-        if value == L[mid]:
-            steps += 1
-            print("Value found at index:", mid)
-            break
-        elif value > L[mid]:
+        if target > L[mid]:
             MIN = mid + 1
-            steps += 1
-        elif value < L[mid]:
+        elif target < L[mid]:
             MAX = mid - 1
-            steps += 1
-    else:
-        print("Number not found in the array:", value)
-
-    print("Total steps:", steps)
+        else:
+            return mid
+    return -1  # Not Found
 
 
-L = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-Binary_Search(L)
+L = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(Binary_Search(L, 1))
