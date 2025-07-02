@@ -1,3 +1,13 @@
+import num2words
+
+def convert_to_words_online():
+    num = int(input("Enter any number:"))
+    word = num2words.num2words(num)
+    print(num, ":", word)
+
+# convert_to_words_online()
+
+
 def convert_to_words(num):
 
     num_check=int(num)
@@ -62,5 +72,5 @@ def convert_to_words(num):
         x += 1
 
 
-num=input("Enter any number:")
-convert_to_words(num)
+# num=input("Enter any number:")
+# convert_to_words(num)
