@@ -75,7 +75,9 @@ def GamePlay(position,rows, max_removable_sticks, total_sticks,remaining_sticks)
                 print()
                 current_position='c'
         else:
-            if remaining_sticks < max_removable_sticks:
+            if total_sticks <= max_removable_sticks:
+                sticks_to_remove = total_sticks - 1
+            elif remaining_sticks < max_removable_sticks:
                 sticks_to_remove = random.randint(1,remaining_sticks)
             else:
                 sticks_to_remove = random.randint(1,max_removable_sticks)
