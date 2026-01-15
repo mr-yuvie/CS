@@ -28,6 +28,7 @@ import numpy as np
 
 # print(df_2.nunique())      #To see number of unique values in each column
 # print(df_2["A"].unique())  #To see unique values by column name
+# print(df_2.drop_duplicates()) #To only see unique rows and drop duplicate rows
 
 
 # # LOADING DATA FROM FILES
@@ -43,11 +44,11 @@ import numpy as np
 # olympics = pd.read_excel("Pandas\Data\olympics-data.xlsx") #Reads the default sheet 1
 # print(olympics)
 
-# olympics_result = pd.read_excel("Pandas\Data\olympics-data.xlsx", sheet_name="results")  # Reads the default sheet 1
+# olympics_result = pd.read_excel("Pandas\Data\olympics-data.xlsx", sheet_name="results")  # Reads the sheet provided in the parameter
 # print(olympics_result)
 
 # FEATHER:
-# results = pd.read_feather(r"Data\data\results.feather")
+# results = pd.read_feather(r"Pandas\Data\results.feather")
 # print(results)
 
 # PARQUET:
@@ -155,6 +156,7 @@ import numpy as np
 # To remove something:
 # print(coffee.drop(0))                  # Removed the first row, Uses rows by default
 # print(coffee.drop(columns=["Price"]))  # Removed the column Price
+# bios.drop(bios[bios['born_country']=='USA'].index,inplace=True)
 
 # coffee.drop(columns=["Price"])         # But the changes arent permanent in coffee so for that we do inplace=True
 # print(coffee)
@@ -196,12 +198,13 @@ import numpy as np
 # bios['born_date'] = pd.to_datetime(bios['born_date'])     # Changing datatype of the same column
 # print(bios.info())
 # bios["Year"] = bios["Born_DateTime"].dt.year              # Adding the year column
+# print(bios.loc[(bios['born_date'] >= '1980-01-01') & (bios['born_date'] <= '1980-12-31')])
 # print(bios)
 
 
 # To save a file:
 # bios.to_csv(r"Y:\CS\Python\Pandas\Data\bios_new.csv")
-
+# bios.to_csv(r"Y:\CS\Python\Pandas\Data\bios_new.csv",index=False) # To not save index values
 
 # # FOURTH CLASS
 
@@ -214,7 +217,7 @@ import numpy as np
 #         return 'Short'
 #     elif row['height_cm'] < 170:
 #         return 'Average'
-#     else:
+#     elif row['height_cm'] > 170:
 #         return 'Tall'
 
 # bios['Category'] = bios.apply(categorize_athlete, axis=1) # To use a function
@@ -242,6 +245,8 @@ import numpy as np
 # bios_new = pd.merge(bios, nocs, left_on='born_country', right_on='NOC')
 # print(bios_new)
 
+# To join multiple columns[can use ]
+# bios['temp'] = bios['name'] + " " + bios['born_country']
 
 # Aggregating Functions:
 
@@ -251,7 +256,7 @@ import numpy as np
 
 # Group By
 # coffee = pd.read_csv(r"Y:\CS\Python\Pandas\Data\coffee.csv")
-# print(coffee.groupby(['Coffee Type'])['Units Sold'].sum())
+# print(coffee.groupby(['Coffee Type'])['Units Sold'].sum())    
 # print(coffee.groupby(["Coffee Type"])["Units Sold"].mean())
 
 # Aggregating Data
@@ -316,6 +321,8 @@ import numpy as np
 # print(coffee.notna())
 # print(coffee[coffee["Units Sold"].notna()])
 
+# To find and replace
+# coffee['Coffee Type'].replace({'Espresso':'Tea'},inplace=True)
 
 # Optional to teach-Advanced Topics:
 

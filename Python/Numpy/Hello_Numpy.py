@@ -79,7 +79,7 @@ from numpy import random
 # e = np.array([[1.278, 2.345], [3.954, 4.784]])
 
 # # Math Functions --> Both numbers and arrays are viable arguments. (a,b,c): c is the return array type.
-# # Addition``
+# # Addition
 # print(np.add(a, b))
 
 # # Subtraction
@@ -160,7 +160,7 @@ from numpy import random
 # # 4. Median
 # print(np.median(b))
 
-# # Mean
+# # 5. Mean
 # print(np.mean(b))
 
 

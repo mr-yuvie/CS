@@ -206,6 +206,22 @@ void fibonacci_sequence() {
     }
 }
 
+int fib_rec(int n) {
+    if (n == 0) {
+        return 0;
+    }
+    if (n == 1) {
+        return 1;
+    }
+    return fib_rec(n - 1) + fib_rec(n - 2);
+}
+
+void fib_rec_call() {
+    for (int j = 0; j < 8; j++) {
+        printf("%d\n", fib_rec(j));
+    }
+}
+
 void avg_3_nums_array() {
     int marks[3];
     printf("Enter marks of Physics: ");
@@ -436,6 +452,7 @@ int main() {
     // prime_numbers_in_range();
     // printf("Sum is: %d", sum_n_numbers_recursion(3));
     // fibonacci_sequence();
+    // fib_rec_call();
     // avg_3_nums_array();
     // count_odd();
     // Reverse_Array();

@@ -1,5 +1,5 @@
 #include <math.h>
-#include <stdio.h>  // Preprocessor director
+#include <stdio.h>  // Preprocessor directives
 #include <stdlib.h>
 #include <string.h>
 
@@ -36,16 +36,16 @@ int type_declaration() {
     x = y = z = 20;
     int j = 3, k = 2;
     printf("%f\n", pow(j, k));  // 9.0000
-    printf("%d\n", c % b);
-    printf("%d\n", 4 / 2);
-    printf("%d", (int)1.9999);  // Foreful tyoe casting
+    printf("%d\n", c % b);      // % only works with int data type; for float values use fmod(c,b)
+    printf("%d\n", 4 / 2);      // returns int if both the arguments are int, if one of them is float then returns float
+    printf("%d", (int)1.9999);  // Foreful type casting
     return 0;
 }
 
 // Control Instructions => Sequence Control, Decision Control, Loop Control,
-// Case Control Logical Operators => &&, ||, ! Operator Precedence => !, Bodmas,
-// relational operators, logical operators, assignment operator Shorthand
-// notations also work like +=, -= etc.
+// Case Control Logical Operators => &&, ||, ! and Operator Precedence => !, Bodmas,
+// relational operators, logical operators, assignment operator
+// Shorthand notations also work like +=, -= etc.
 
 int logical_operators() {
     printf("%d\n", (3 > 4) || (4 > 3));
@@ -61,8 +61,8 @@ int conditional_operators_1() {
 
     if (age >= 18 && age < 60) {
         printf("Adult\n");
-    } else if (age > 60) {
-        printf("Senior Citizen");
+    } else if (age >= 60) {
+        printf("Senior Citizen\n");
     } else {
         printf("Not an Adult\n");
     }
@@ -111,7 +111,7 @@ void Recursion(int count) {
 
 // Pointer: A variable that stores the memory address of another variable
 // *: Value at Address operator, &: Address of operator
-// Pointer to Pointer: A variable that stores the memory address of another pointer // int **pptr;
+// Pointer to Pointer: A variable that stores the memory address of another pointer: int **pptr;
 
 // Pointers can be incremented(ptr++) and decremented(ptr--)
 // ptr1 - ptr2 is also valid and will return difference in unit of the data stored(booth pointers should have same data type)
@@ -119,11 +119,11 @@ void Recursion(int count) {
 void Pointers() {
     int age = 21;
     int *ptr = &age;
-    int _age = *ptr;
+    int age2 = *ptr;
+    printf("%u\n", ptr);  // %u: unsigned int[can only hold non-negative integers]
+    ptr++;                // It will move to the next item
     printf("%u\n", ptr);
-    ptr++;  // It will move to the next item
-    printf("%u\n", ptr);
-    printf("%p", ptr);  // %p: pointer address // same as 'print("%p", &age);'
+    printf("%p", ptr);  // %p: pointer address[hexadecimal] // same as 'printf("%p", &age);'
 }
 
 // Arrays: Collection of similar data types stored at contiguous memory locations
@@ -137,11 +137,23 @@ void Arrays() {
         ptr++;
         // printf("%d\n", nums[i]); is also valid
     }
+    // Reverse of an Array
+    int j = 0;
+    int *ptr2 = &nums[7];
+    while (j < 8) {
+        printf("%d\n", *ptr2);
+        ptr2--;
+        j++;
+    }
 }
 
 void Multidimensional_Arrays() {
     int marks[2][3] = {{84, 85, 86}, {94, 95, 96}};
-    printf("%d", marks[0][1]);  // 85
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d\n", marks[i][j]);
+        }
+    }
 }
 
 void Strings() {
