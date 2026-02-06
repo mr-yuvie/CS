@@ -24,3 +24,26 @@ int main() {
     printf("Total steps: %d", total_steps);
     return 0;
 }
+
+// #include <stdio.h>
+
+// void Practical_2_3(){
+//     printf("Hello World\n");
+// }
+
+// int even_odd() {
+//     int num;
+//     printf("Enter num: ");
+//     scanf("%d", &num);
+//     if (num % 2 == 0) {
+//         printf("Even");        
+//     } else {
+//         printf("Odd");
+//     }
+//     return 0;
+// }
+
+// int main(){
+//     Practical_2_3();
+//     even_odd();
+// }
