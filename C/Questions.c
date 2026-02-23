@@ -222,6 +222,37 @@ void fib_rec_call() {
     }
 }
 
+void pyramid(){
+    int n;
+    printf("Enter height of pyramid: ");
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        for(int k=0; k<n-i; k++){
+            printf(" ");
+        }
+        for(int j=0;j<2*i+1;j++){
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+void inverted_pyramid(){
+    int n;
+    printf("Enter height of pyramid: ");
+    scanf("%d",&n);
+    for(int i=n;i>0;i--){
+        for(int k=n-i+1; k>0; k--){
+            printf(" ");
+        }
+        for(int j=2*i-1;j>0;j--){
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+
 void avg_3_nums_array() {
     int marks[3];
     printf("Enter marks of Physics: ");
@@ -453,6 +484,8 @@ int main() {
     // printf("Sum is: %d", sum_n_numbers_recursion(3));
     // fibonacci_sequence();
     // fib_rec_call();
+    // pyramid();
+    // inverted_pyramid();
     // avg_3_nums_array();
     // count_odd();
     // Reverse_Array();
